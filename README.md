@@ -1,1 +1,1 @@
-# Coming soon, the code and documentation for micro:bit robot and a side of controllers, done 4 ways.
+# Coming soon, the code and construction documentation for a micro:bit robot and a side of controllers, done 4 ways.
