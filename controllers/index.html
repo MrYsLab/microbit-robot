@@ -627,15 +627,15 @@ gb = GamerBit(gb_callback)
 </code></pre>
 
 <p>As shown on the <a href="https://github.com/MrYsLab/gamerbit">gamerbit</a> GitHub page, the library uses a callback
-method provided by the user, to process any button presses on the board. The function, gb_callback() handles
-all the button presses for this application. It translates the gamer:bit events to motor control strings
+method provided by the user, to process any button presses on the board. The function, gb_callback()is that
+callback function. It translates the gamer:bit events to motor control strings
 and sends those strings over the micro:bit radio interface to the robot. The radio is turned on only to transmit the short
 command strings and then immediately turned off to preserve the battery life. </p>
 <h3 id="running-the-gamerbit-controller">Running The Gamerbit Controller</h3>
 <ol>
-<li>Using your favorite mirco:bit editor, flash <em>gb_remote_control.py</em> on to a micro:bit.</li>
+<li>Using your favorite mirco:bit editor, flash <a href="https://github.com/MrYsLab/microbit-robot/blob/master/remote_controllers/gamerbit/gb_remote_control_min.py"><em>gb_remote_control_min.py</em></a> on to a micro:bit.</li>
 <li>Plug the micro:bit in the gamer:bit.</li>
-<li>Power the micro:bit either with a USB cable or attaching a batter pack.</li>
+<li>Power the micro:bit either with a USB cable or attaching a battery pack.</li>
 </ol>
               
             </div>
