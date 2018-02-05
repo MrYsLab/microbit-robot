@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>The Robot - The microbit-robot Guide</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "The Robot";
+    var mkdocs_page_input_path = "robot.md";
+    var mkdocs_page_url = "/robot/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> The microbit-robot Guide</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Introduction</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">The Robot</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#construction">CONSTRUCTION</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#a-list-of-components">A List Of Components</a></li>
+        
+            <li><a class="toctree-l3" href="#assembly">Assembly</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#coding-the-robot">CODING THE ROBOT</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#a-note-on-minifying-code">A Note On Minifying Code</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#using-3rd-party-libraries-with-microbit-micropython">Using 3rd Party Libraries With micro:bit MicroPython</a></li>
+    
+
+    <li class="toctree-l2"><a href="#the-kitronic_motor_board-library">The kitronic_motor_board Library</a></li>
+    
+
+    <li class="toctree-l2"><a href="#the-microbit_robot-source-code">The microbit_robot Source Code</a></li>
+    
+
+    <li class="toctree-l2"><a href="#flashing-microbit_robot_minpy">FLASHING MICROBIT_ROBOT_MIN.PY</a></li>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../controllers/">The Controllers</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../contact/">Contact Information</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">The microbit-robot Guide</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>The Robot</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="construction">CONSTRUCTION</h2>
+<h3 id="a-list-of-components">A List Of Components</h3>
+<p>Other than the pair of micro:bit computers, Kitronik motor board and the Sharp Digital Distance sensor,
+feel free to use any parts or construction practices you wish. Many of these parts came from my
+hardware "goodie box" and if you have your own parts on hand, I encourage you to use them to personalize your
+robot.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Quantity</th>
+<th>Component</th>
+<th align="right">Cost (USD)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">2</td>
+<td><a href="https://www.adafruit.com/product/3530">micro:bit computers</a></td>
+<td align="right">$30.00</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td><a href="https://www.amazon.com/YIKESHU-wheels-Chassis-Encoder-Arduino/dp/B073VHQT6P/ref=sr_1_6?ie=UTF8&amp;qid=1517087583&amp;sr=8-6&amp;keywords=arduino+robot+chassis">robot chassis and motors</a></td>
+<td align="right">$14.00</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td><a href="https://shop.pimoroni.com/collections/micro-bit-uk/products/motor-driver-board-for-the-bbc-micro-bit">Kitronik micro:bit motor board</a></td>
+<td align="right">$15.00</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td><a href="https://www.adafruit.com/product/1927">Sharp GP2Y0D810Z0F Digital Distance Sensor with Pololu Carrier</a></td>
+<td align="right">$7.00</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td><a href="https://smile.amazon.com/AmazonBasics-Performance-Alkaline-Batteries-Count/dp/B00MNV8E0C/ref=sr_1_1_sspa?s=hpc&amp;ie=UTF8&amp;qid=1517344767&amp;sr=1-1-spons&amp;keywords=aa%2Bbatteries&amp;th=1">AA Batteries</a></td>
+<td align="right">$1.00</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td><a href="https://smile.amazon.com/nylon-quadcopter-standoffs-spacer%EF%BC%8CFixed-Screws/dp/B07923KCWW/ref=sr_1_2_sspa?ie=UTF8&amp;qid=1517345205&amp;sr=8-2-spons&amp;keywords=nylon+standoffs&amp;psc=1">Nylon Mounting Hardware</a></td>
+<td align="right">$6.50</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td><a href="https://www.adafruit.com/product/65">Tiny Breadboard</a></td>
+<td align="right">$4.00</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td><a href="https://www.adafruit.com/product/826">Male to female jumper wires</a></td>
+<td align="right">$4.00</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td><a href="https://www.adafruit.com/product/392">Breakaway male header pins</a></td>
+<td align="right">$5.00</td>
+</tr>
+</tbody>
+</table>
+<h3 id="assembly">Assembly</h3>
+<p><style>
+.center {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}</p>
+<p></style>
+<div class="center">
+<img align="middle" src="../images/assembling_robot_chassis_2.png"></div>
+1. Assemble the robot by <a href="https://randomnerdtutorials.com/build-robot-car-chassis-kit-arduino/">following these instructions.</a></p>
+<p></style>
+<div class="center">
+<img align="middle" src="../images//motor_pins.JPG"></div>
+2. Measure a breakaway header and solder it to the breakout pins of the Kitronic motor board.
+Place the short pins into the breakout pads from the top of the board, exposing the longer pins.</p>
+<p></style>
+<div class="center">
+<img align="middle" src="../images/sensor_pins.JPG"></div>
+3. Using the pins that come with the Sharp Digital Distance Sensor, solder the straight pins
+to the module.</p>
+<p></style>
+<div class="center">
+<img align="middle" src="../images/mount.JPG"></div>
+4. Mount the Kitronik motor board to the robot chasis using the nylon mounting hardware.</p>
+<p></style>
+<div class="center">
+<img align="middle" src="../images/wiring.JPG"></div>
+5. Wire the motors and battery to the motor board. Kitronic instructions may be found <a href="https://www.kitronik.co.uk/pdf/5620%20Motor%20Driver%20Board%20V1.1-2.pdf">here</a>.</p>
+<p></style>
+<div class="center">
+<img align="middle" src="../images/front.JPG"></div>
+6. Peel off the adhesive cover from the Tiny Bread Board and mount on the robot chasis.
+<br>
+<br>
+7. Place the digital distance sensor in the breadboard.</p>
+<p></style>
+<div class="center">
+<img align="middle" src="../images/ir_sensor.png"></div>
+8. Using the male to female jumpers connect the OUT pin on the sensor module to pin 15 on the Kitronik header,
+VIN to 3V and GND to GND.<br>
+<br>
+</style>
+<div class="center">
+<img align="middle" src="../images/k2.png"></div>
+9. Plug a micro:bit into the slot on the Kitroniks motor board.<br>
+<br>
+10. Your robot is now ready for a software load!</p>
+<p></style>
+<div class="center">
+<img align="middle" src="../images/robot.png"></div></p>
+<h2 id="coding-the-robot">CODING THE ROBOT</h2>
+<h3 id="a-note-on-minifying-code">A Note On Minifying Code</h3>
+<p>All micro:bit MicroPython files for this project are supplied in 2 formats, a fully commented format and a "minified" format.
+The minified format removes all comments and unnecessary white space. The micro:bit has limited resources, so we
+want to maximize every bit of space we can for useful executable code. To do this, we "minify" the fully commented file using
+<a href="https://github.com/liftoff/pyminifier">pyminifier</a>.</p>
+<p>The pyminifier utility can be installed on your computer using <em>pip</em>.</p>
+<p>For Windows:</p>
+<pre><code>pip install pyminifer
+</code></pre>
+
+<p>For Linux/Mac:</p>
+<pre><code>sudo pip3 install pyminifer
+</code></pre>
+
+<p>Once installed, it's easy to use. Pyminifier accepts an input file and creates a minified version,
+ leaving the original file intact. </p>
+<p>Here is a sample of a fully commented file, called min_ex.py.</p>
+<pre><code># This is a demo file to illustrate using the pyminifier utility.
+# Usage of pyminifier with this file:
+#    pyminifier -o min_ex_min.py mix_ex.py
+
+def some_function(a, b, c):
+    &quot;&quot;&quot;
+    This is a sample function with three input parameters
+    :param a: input 1
+    :param b: input 2
+    :param c: input 3
+    :return: the result of adding a+b+c
+    &quot;&quot;&quot;
+    sum = a + b + c
+    return sum
+</code></pre>
+
+<p>To minify this file, open a command/terminal window, 
+then type the following command:</p>
+<pre><code>pyminifier -o min_ex_min.py min_ex.py
+</code></pre>
+
+<p>The <em>-o</em> option specifies the name of the minified file, and the last parameter is the name of the 
+source file to minify.</p>
+<p>This will create a new file called <em>min_ex_min.py</em> while leaving <em>min_ex.py</em> intact.</p>
+<p>Here is the result:</p>
+<pre><code>def some_function(a,b,c):
+ sum=a+b+c
+ return sum
+</code></pre>
+
+<p>So after running this command, we still have our original file to refer to and maintain, and a minified, stripped down
+version, to flash to the micro:bit</p>
+<h2 id="using-3rd-party-libraries-with-microbit-micropython">Using 3rd Party Libraries With micro:bit MicroPython</h2>
+<p>In Python, to utilize a 3rd party module or library, we normally install it using a tool like <em>pip</em>, and then add
+an <em>import</em> statement to our source file to include the library in our project.</p>
+<p>For the micro:bit, things work a bit differently. You can still use an import statement if you wish, but the 
+the <a href="https://microbit-playground.co.uk/howto/add-python-module-microbit-micropython">procedure</a>
+to do so is somewhat cumbersome. A simpler and more straight forward approach is to simply copy the library source code 
+to the top of your application source file and then add your code below it.</p>
+<p>For the robot, we are going to take advantage of the <a href="https://github.com/MrYsLab/kitronic_motor_board">kitronic_motor_board library</a>
+to provide motor control.</p>
+<p>If you look at <a href="https://github.com/MrYsLab/microbit-robot/blob/master/robot/microbit_robot.py">microbit_robot.py</a>, you will see the KMotor class at the top of the file. This class is the source for the 
+kitronic_motor_board library that was copied and pasted into our file.</p>
+<h2 id="the-kitronic_motor_board-library">The kitronic_motor_board Library</h2>
+<p>You can read the full API documentation for the <a href="https://github.com/MrYsLab/kitronic_motor_board">kitronic_motor_board library</a> on
+the GitHub web page, but in a nutshell, it provides a simple API for motor control that allows one to select a motor 
+and turn it on in either the forward or reverse direction, or place it in a hard brake or coast state.</p>
+<h2 id="the-microbit_robot-source-code">The microbit_robot Source Code</h2>
+<p>The <em>Robot</em> class provides both robot control
+and an interface to the outside world using the micro:bit radio.</p>
+<p>Let's take a look at this class in a little more detail.</p>
+<p>The <strong>__init__</strong> method first creates an instance of the KMotor library class. It then
+displays a "HAPPY" image on the micro:bit display to let us know that the robot is "alive".</p>
+<pre><code class="angular2html">class Robot:
+    &quot;&quot;&quot;
+    This class runs a simple 2 wheel/2motor robot.
+    It listens for commands over the radio interface
+    and dispatches the method associated with the command.
+
+    It also monitors the Sharp GP2Y0D810Z0F Digital Distance Sensor
+    for objects that are in front of the robot
+    &quot;&quot;&quot;
+
+    def __init__(self):
+        &quot;&quot;&quot;
+        Instantiate an instance of KMotor.
+        Display a &quot;smile&quot; to let the use know that upon
+        first power up, we are alive.
+        Create a dispatch table for each radio command.
+        Turn on the radio and wait for commands to come in.
+        &quot;&quot;&quot;
+
+        # instantiate a motor object
+        self.km = KMotor()
+
+        # display something so that we know the board is
+        # alive
+        display.show(Image.HAPPY)
+
+</code></pre>
+
+<p>Next, a "dispatch dictionary" is constructed to help find and execute each command
+that is received over the micro:bit radio interface. The radio interface is then enabled:</p>
+<pre><code class="angular2html">        # build a dispatch dictionary to allow us
+        # to quickly execute each incoming command
+        self.dispatch = {'fwd': self.go_forward,
+                         'rev': self.go_reverse,
+                         'left': self.go_left,
+                         'right': self.go_right,
+                         'spin_right': self.spin_right,
+                         'spin_left': self.spin_left,
+                         'stop': self.stop,
+                         }
+        # turn on the micro:bit radio so that we can receive commands.
+        radio.on()
+
+</code></pre>
+
+<p>We then go into the event loop. First the loop checks the distance sensor to see if the
+robot needs to take evasive action. The sensor returns a digital 0 when something is near,
+and has the robot reverse direction for 1 second, turn right for 1 second and then turns
+the motors off when the robot is in range of an obstacle.</p>
+<p>The loop continues and checks to see if a command has been received over the radio interface.
+If a command is available, its associated method is retrieved from the the dispatch table and is executed:</p>
+<pre><code class="angular2html">        while True:
+            # check to see if we need to perform an avoidance maneuver.
+            # when an object is near, the distance sensor returns a digital 0.
+            # if a crash is imminent, reverse and go right
+            if not pin15.read_digital():
+                self.go_reverse()
+                sleep(1000)
+                self.go_right()
+                sleep(1000)
+                self.stop()
+
+            # get next command
+            cmd = radio.receive()
+            if cmd is None:
+                pass
+            else:
+                # move motors based on command
+                # fetch command from command table
+                op = self.dispatch.get(cmd, None)
+                # if a command has been fetched, execute it
+                if op:
+                    op()
+</code></pre>
+
+<p>The motion command methods follow next:</p>
+<pre><code class="angular2html">    # motion command handlers
+    def go_forward(self):
+        display.show(Image.ARROW_N)
+        # adjust speeds to help robot go straight
+        self.km.motor_on(self.km.MOTOR_1, self.km.FORWARD, 60)
+        self.km.motor_on(self.km.MOTOR_2, self.km.FORWARD, 60)
+
+    def go_reverse(self):
+        display.show(Image.ARROW_S)
+        # adjust speeds to help robot go straight
+        self.km.motor_on(self.km.MOTOR_1, self.km.REVERSE, 70)
+        self.km.motor_on(self.km.MOTOR_2, self.km.REVERSE)
+
+    def go_left(self):
+        display.show(Image.ARROW_W)
+        # adjust speed to turn the robot
+        self.km.motor_on(self.km.MOTOR_1, self.km.FORWARD, 40)
+        self.km.motor_on(self.km.MOTOR_2, self.km.FORWARD)
+
+    def go_right(self):
+        display.show(Image.ARROW_E)
+        # adjust speed to turn the robot
+        self.km.motor_on(self.km.MOTOR_1, self.km.FORWARD)
+        self.km.motor_on(self.km.MOTOR_2, self.km.FORWARD, 40)
+
+    def spin_right(self):
+        display.show(Image.ARROW_NE)
+        self.km.motor_on(self.km.MOTOR_1, self.km.FORWARD)
+        self.km.motor_on(self.km.MOTOR_2, self.km.REVERSE)
+
+    def spin_left(self):
+        display.show(Image.ARROW_SW)
+        self.km.motor_on(self.km.MOTOR_2, self.km.FORWARD)
+        self.km.motor_on(self.km.MOTOR_1, self.km.REVERSE)
+
+    def stop(self):
+        self.km.motor_off(self.km.MOTOR_1)
+        self.km.motor_off(self.km.MOTOR_2)
+        display.clear()
+
+
+# instantiate a Robot
+r = Robot()
+</code></pre>
+
+<p>Each command method displays an image on the display, or for the stop command, clears the display in order to preserve
+battery life. Each method invokes the appropriate KMotor method to control the motors.</p>
+<h2 id="flashing-microbit_robot_minpy">FLASHING MICROBIT_ROBOT_MIN.PY</h2>
+<p>Using your favorite editor, such as PyCharm (using <a href="https://github.com/MrYsLab/pseudo-microbit">pseudo-microbit</a> or the micropython plugin), 
+the <a href="https://codewith.mu/">Mu Editor</a>, or the <a href="http://python.microbit.org/v/1">on-line editor</a>, cut and paste 
+<a href="https://github.com/MrYsLab/microbit-robot/blob/master/robot/microbit_robot_min.py">microbit_robot_min.py</a> into your editor and flash it onto the micro:bit. </p>
+<p>The robot is now ready to be controlled by one of the remote controllers.</p>
+<p></style>
+<div class="center">
+<img align="middle" src="../images/robot.gif"></div></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../controllers/" class="btn btn-neutral float-right" title="The Controllers">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href=".." class="btn btn-neutral" title="Introduction"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../controllers/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/require.js"></script>
+      <script src="../search/search.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>The Controllers - The microbit-robot Guide</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "The Controllers";
+    var mkdocs_page_input_path = "controllers.md";
+    var mkdocs_page_url = "/controllers/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> The microbit-robot Guide</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Introduction</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../robot/">The Robot</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">The Controllers</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#a-choice-of-4-remote-controllers">A Choice Of 4 Remote Controllers</a></li>
+    
+
+    <li class="toctree-l2"><a href="#1-gesture-controller">1. GESTURE CONTROLLER</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#gesture-controller-code">Gesture Controller Code</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#gui-based-controllers">GUI BASED CONTROLLERS</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#the-gui_radio_bridge">The gui_radio_bridge</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#2-the-web-page-gui-controller">2. THE WEB PAGE GUI CONTROLLER</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#the-remi-gui-builder">The remi GUI Builder</a></li>
+        
+            <li><a class="toctree-l3" href="#web-gui-code">Web GUI Code</a></li>
+        
+            <li><a class="toctree-l3" href="#running-the-web-based-gui">Running The Web Based GUI</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#3-the-tkinter-gui-controller">3. THE TKINTER GUI CONTROLLER</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#tk_controller-code">tk_controller Code</a></li>
+        
+            <li><a class="toctree-l3" href="#running-the-tkinter-based-gui">Running The tkinter Based GUI</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#4-the-gamerbit-controller">4. THE GAMER:BIT CONTROLLER</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#gamerbit-code">Gamerbit Code</a></li>
+        
+            <li><a class="toctree-l3" href="#running-the-gamerbit-controller">Running The Gamerbit Controller</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../contact/">Contact Information</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">The microbit-robot Guide</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>The Controllers</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="a-choice-of-4-remote-controllers">A Choice Of 4 Remote Controllers</h2>
+<p>To demonstrate the flexibility of the micro:bit, 4 different remote controllers
+have been developed:</p>
+<ol>
+<li>
+<p>A micro:bit <em>gesture</em> controller - translates micro:bit gestures into robot commands.</p>
+</li>
+<li>
+<p>A Web Page GUI - provides 6 buttons in your browser to control the robot.</p>
+</li>
+<li>
+<p>A tkinter GUI - provides 6 buttons on screen to control the robot.</p>
+</li>
+<li>
+<p>A <a href="https://www.sparkfun.com/products/14215">SparkFun gamer:bit</a> push button interface.</p>
+</li>
+</ol>
+<p>The control protocol between the robot is consistent across all controllers, so the
+   robot only need be flashed once to use any of the controllers.</p>
+<h2 id="1-gesture-controller">1. GESTURE CONTROLLER</h2>
+<p></style>
+<div class="center">
+<img align="middle" src="../images/z.gif"></div></p>
+<p>This controller consists of a standalone micro:bit. Robot motion is directed by 
+changing the micro:bit's orientation: </p>
+<ul>
+<li>
+<p>Point the USB connector towards the floor to direct the robot to go forward.</p>
+</li>
+<li>
+<p>Point the USB connector towards the ceiling to direct the robot to go in reverse.</p>
+</li>
+<li>
+<p>Point Button A (without pressing it )towards the floor to direct the robot to go left.</p>
+</li>
+<li>
+<p>Point Button A (without pressing it )towards the ceiling to direct the robot to go right.</p>
+</li>
+<li>
+<p>Press Button A to spin left.</p>
+</li>
+<li>
+<p>Press Button B to spin right.</p>
+</li>
+<li>
+<p>Hold the micro:bit parallel to the floor and ceiling, and the robot stops.</p>
+</li>
+</ul>
+<p>To use the gesture controller, flash <a href="https://github.com/MrYsLab/microbit-robot/blob/master/remote_controllers/gestures/gesture_controller_min.py">gesture_controller_min.py</a> onto the micro:bit, and you are ready to go.</p>
+<h3 id="gesture-controller-code">Gesture Controller Code</h3>
+<pre><code class="angular2html">from microbit import *
+import radio
+
+# the last gesture detected
+last_gesture = ''
+
+def send_command(cmd):
+    &quot;&quot;&quot;
+    This function sends a command to the radio.
+    :param cmd: Command string
+    :return:
+    &quot;&quot;&quot;
+    radio.on()
+    radio.send(cmd)
+    sleep(100)
+    radio.off()
+
+# the main loop
+while True:
+    # get the current gesture
+    gesture = accelerometer.current_gesture()
+
+    # if either button is pressed, translate this to
+    # a pseudo gesture
+    if button_a.is_pressed():
+        gesture = 'spin_left'
+    if button_b.is_pressed():
+        gesture = 'spin_right'
+
+    # if this gesture is different than the last,
+    # build the command string and transmit it over the radio.
+    if not last_gesture == gesture:
+        last_gesture = gesture
+        if gesture == 'down':
+            display.show(Image.ARROW_N)
+            send_command('fwd')
+        elif gesture == 'up':
+            display.show(Image.ARROW_S)
+            send_command('rev')
+        elif gesture == 'left':
+            display.show(Image.ARROW_W)
+            send_command('left')
+        elif gesture == 'right':
+            display.show(Image.ARROW_E)
+            send_command('right')
+        elif gesture == 'spin_left':
+            display.show(Image.ARROW_NW)
+            send_command('spin_left')
+        elif gesture == 'spin_right':
+            display.show(Image.ARROW_NE)
+            send_command('spin_right')
+        else:
+            display.show(Image.NO)
+            send_command('stop')
+
+</code></pre>
+
+<p>A motion control message is sent to the robot only if a new motion command is detected.
+This helps preserve battery life for both the controller and the robot.</p>
+<p>Looking at the event loop, it begins by retrieving the current micro:bit gesture.</p>
+<p>It then checks the state of Button A and Button B to see if the user wishes to spin
+the robot in either direction. If either of the buttons is currently pressed,
+the button press is translated into a "pseudo gesture" and saved.
+This allows the button presses to emulate the behavior of a true gesture change.</p>
+<p>Next the current gesture is compared to the one saved from the previous cycle. If it is
+the same, no action is taken, but if it is different, then the appropriate motion
+message is sent to the robot by passing the message to the send_command function. This function turns the
+radio on, transmits the command and then turns the radio off. 
+In addition an arrow image is displayed to show the motion
+command detected, or an "X" is displayed if the robot is stopped.</p>
+<h2 id="gui-based-controllers">GUI BASED CONTROLLERS</h2>
+<p>The GUI based controllers each consist of 2 components. The first component is a Python script
+that runs on a PC and connects to the micro:bit via the serial/USB cable. There are separate Python scripts 
+for each of the GUI controllers, that is
+the Web based GUI and tkinter based GUI. These scripts
+detect GUI button press events, and when an event change is detected, it sends a serial
+message to the micro:bit. The micro:bit translates these serial messages into radio commands
+and transmits those to the robot.</p>
+<p></style>
+<div class="center">
+<img align="middle" src="../images/links.png"></div></p>
+<h3 id="the-gui_radio_bridge">The gui_radio_bridge</h3>
+<p>As described above, the gui_radio_bridge translates serial messages generated
+ by the GUI scripts into radio messages.</p>
+<p>It needs to be flashed onto the micro:bit before either of the PC GUI scripts can run.</p>
+<p>To flash the gui_radio_bridge, just copy the code from <a href="https://github.com/MrYsLab/microbit-robot/blob/master/remote_controllers/gui_controllers/gui_radio_bridge_min.py">gui_radio_bridge_min.py</a>
+to your favorite micro:bit editor and flash it. </p>
+<h4 id="the-gui_radio_bridge-code">The gui_radio_bridge Code.</h4>
+<pre><code class="angular2html">from microbit import *
+import radio
+
+while True:
+    # get data from serial link
+    data = uart.readline()
+    sleep(8)
+    if data:
+        # send data out over the radio
+        cmd = str(data, 'utf-8').rstrip()
+        radio.on()
+        radio.send(cmd)
+        radio.off()
+
+
+</code></pre>
+
+<p>The code for this script is very simple. The loop waits for an incoming line of text to be received
+over the serial link from the PC.
+When a line is received, it turns the radio on,
+sends the received string out via the radio interface, and then turns the radio off.</p>
+<h2 id="2-the-web-page-gui-controller">2. THE WEB PAGE GUI CONTROLLER</h2>
+<p><style>
+.center {
+    margin: auto;
+    width: 85%;
+    padding: 10px;
+}</p>
+<p></style>
+<div class="center">
+<img align="middle" src="../images/web_gui.png"></div></p>
+<h3 id="the-remi-gui-builder">The remi GUI Builder</h3>
+<p>The GUI Web page shown above, was created using a drag and drop editing tool included with the
+<a href="https://github.com/dddomodossola/remi"><strong>remi</strong></a> GUI builder. Click on the <em>remi</em> link to the left if you are interested
+in learning how to use remi to create interactive web pages in pure Python.
+The editor not only allows you to layout the web page, but it generates the code for the page as well,
+including stubs for any desired GUI events, such as button clicks. If you prefer to code directly in Python
+without the aid of the editor, the remi API is succinct and easy to understand.</p>
+<p>The GUI and its associated web server are run on a PC, and it connects to a micro:bit via a serial USB link.
+The code running on the micro:bit is the <a href="../controllers/#the-gui_radio_bridge">gui_radio_bridge</a>.
+The bridge translates the serial commands coming from the GUI to micro:bit radio messages.</p>
+<p>Before running this GUI, you will need to install remi on your PC, so please follow the 
+installation instructions on the <a href="https://github.com/dddomodossola/remi">remi GitHub home page</a>.</p>
+<p>I cannot emphasize enough how easily remi makes generating Web based GUIs. You don't have to know any HTML, CSS
+or JavaScript
+and can modify the page in pure Python. In addition, its author provides great support if you have questions
+on using the tool.</p>
+<h3 id="web-gui-code">Web GUI Code</h3>
+<p>As mentioned earlier, the bulk of the code for this GUI was automatically generated by the remi editor.
+What will be shown and described here are the added or modified sections of code. Code that was not
+modified, will not be shown or discussed. If you would like to
+see the file in its entirety, please look at <a href="https://github.com/MrYsLab/microbit-robot/blob/master/remote_controllers/gui_controllers/remi/web_remote_controller.py">web_remote_controller.py</a>.</p>
+<p>The entire Web GUI is encapsulated in a single Python class, called <em>RobotController</em>.</p>
+<h4 id="modifications-or-additions-to-the-generated-code">Modifications Or Additions To The Generated Code</h4>
+<h4 id="__init__"><strong>__init__</strong></h4>
+<p>In the <strong>__init__</strong> method, two lines were added to the generated code. The added code creates
+variables to hold the serial com port, used to communicate with
+the <em>gui_radio_bridge</em>, and another variable to hold the instance of the serial object used to send data to the bridge.</p>
+<pre><code class="angular2html">class RobotController(App):
+    def __init__(self, *args, **kwargs):
+        self.com_port = None
+        self.micro_bit_serial = None
+        if not 'editing_mode' in kwargs.keys():
+            super(RobotController, self).__init__(*args, static_file_path='./res/')
+</code></pre>
+
+<h4 id="main">main</h4>
+<p>The main method, generated by the editor consists of a single line, that calls the ui_constructor
+method that instantiates all the widgets on the page. This is the last line in the code below.</p>
+<p>The code that has been added to <em>main</em> performs micro:bit serial port auto-detection.</p>
+<pre><code class="angular2html">    def main(self):
+        print('Autodetecting serial port. Please wait...')
+        if sys.platform.startswith('darwin'):
+            locations = glob.glob('/dev/tty.[usb*]*')
+            locations = glob.glob('/dev/tty.[wchusb*]*') + locations
+            locations.append('end')
+            # for everyone else, here is a list of possible ports
+        else:
+            locations = ['dev/ttyACM0', '/dev/ttyACM0', '/dev/ttyACM1',
+                         '/dev/ttyACM2', '/dev/ttyACM3', '/dev/ttyACM4',
+                         '/dev/ttyACM5', '/dev/ttyUSB0', '/dev/ttyUSB1',
+                         '/dev/ttyUSB2', '/dev/ttyUSB3', '/dev/ttyUSB4',
+                         '/dev/ttyUSB5', '/dev/ttyUSB6', '/dev/ttyUSB7',
+                         '/dev/ttyUSB8', '/dev/ttyUSB9',
+                         '/dev/ttyUSB10',
+                         '/dev/ttyS0', '/dev/ttyS1', '/dev/ttyS2',
+                         '/dev/tty.usbserial', '/dev/tty.usbmodem', 'com2',
+                         'com3', 'com4', 'com5', 'com6', 'com7', 'com8',
+                         'com9', 'com10', 'com11', 'com12', 'com13',
+                         'com14', 'com15', 'com16', 'com17', 'com18',
+                         'com19', 'com20', 'com21', 'com22', 'com23', 'com24',
+                         'com25', 'com26', 'com27', 'com28', 'com29', 'com30',
+                         'com31', 'com32', 'com33', 'com34', 'com35', 'com36',
+                         'com1', 'end'
+                         ]
+
+        detected = None
+        for device in locations:
+            try:
+                self.micro_bit_serial = serial.Serial(port=device, baudrate=115200,
+                                                      timeout=.1)
+                detected = device
+                break
+            except serial.SerialException:
+                if device == 'end':
+                    print('Unable to find Serial Port, Please plug in '
+                          'cable or check cable connections.')
+                    detected = None
+                    exit()
+            except OSError:
+                pass
+        self.com_port = detected
+
+        # open and close the port to flush the serial buffers
+        self.micro_bit_serial.close()
+        self.micro_bit_serial.open()
+        time.sleep(.05)
+        print('Port found: ', self.com_port)
+        return RobotController.construct_ui(self)
+
+</code></pre>
+
+<h4 id="construct_ui">construct_ui</h4>
+<p>This method is generated by the GUI editor and was not modified. It both instantiates all of the GUI widgets
+and peforms their layout on the web page.</p>
+<h4 id="the-event-handlers">The Event Handlers</h4>
+<p>The remi editor allows you to select events of interest for each widget, and then creates
+a stub method to handle each event. You just need to add the code specific to your application for
+that event.</p>
+<p>Let's look at the handlers for the <em>Forward</em> button. Handlers for all of the other buttons are very similar.</p>
+<pre><code class="angular2html">    def onmousedown_btn_forward(self, emitter, x, y):
+        print('fdown')
+        self.write_to_mb('fwd')
+
+    def onmouseup_btn_forward(self, emitter, x, y):
+        print('fup')
+        self.write_to_mb('stop')
+</code></pre>
+
+<p>There are 2 events associated with this button, that is, when the button is pressed and when it is released.
+The print statements were added to send debugging information to the console, and can optionally be
+deleted.</p>
+<h4 id="write_to_mb">write_to_mb</h4>
+<p>The <em>write_to_mb</em> method sends the command over the serial port to the micro:bit. It is an additional method added to the 
+RobotController class.</p>
+<pre><code class="angular2html">    def write_to_mb(self, msg):
+        msg = bytes(msg.encode())
+        self.micro_bit_serial.write(msg)
+</code></pre>
+
+<h4 id="gui-instantiation">GUI Instantiation</h4>
+<p>The last section of the code instantiates the GUI.</p>
+<pre><code class="angular2html">configuration = {'config_project_name': 'RobotController', 
+                 'config_address': '0.0.0.0', 'config_port': 8081, 
+                 'config_multiple_instance': True, 
+                 'config_enable_file_cache': True, 
+                 'config_start_browser': True, 'config_resourcepath': './res/'}
+
+if __name__ == &quot;__main__&quot;:
+    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    # use the google dns
+    s.connect(('8.8.8.8', 0))
+    # start(MyApp,address='127.0.0.1', port=8081, 
+    #       multiple_instance=False,enable_file_cache=True, 
+    #       update_interval=0.1, start_browser=True)
+    start(RobotController, address=s.getsockname()[0], port=configuration['config_port'],
+                        multiple_instance=configuration['config_multiple_instance'],
+                        enable_file_cache=configuration['config_enable_file_cache'],
+                        start_browser=configuration['config_start_browser'])
+
+</code></pre>
+
+<p>Most of this code was generated by the editor. The <em>configuration</em> dictionary was not modified. It contains
+default entries that can be used when instantiating the GUI.</p>
+<p>The default IP address for the web server is 127.0.0.0.1 as shown in the commented out <em>start</em> line. I wanted to be
+able to expose the web server to browsers on other computers, so the s.connect and s.getsockname calls allow
+for discovery of the IP address of the machine running the webserver. The rest of the parameters are 
+the system defaults, and you can find out more about those on the <em>remi</em> GitHub page.</p>
+<h3 id="running-the-web-based-gui">Running The Web Based GUI</h3>
+<ol>
+<li>Flash the <em>gui_radio_bridge</em> on to the micro:bit acting as the remote.</li>
+<li>Connect the micro:bit to the computer that will run the GUI with a USB cable.</li>
+<li>Run <a href="https://github.com/MrYsLab/microbit-robot/blob/master/remote_controllers/gui_controllers/remi/web_remote_controller.py">web_remote_controller.py</a> from a command or terminal window. </li>
+<li>Open up your web browser and use the announced httpserver URL to 
+   access the GUI. For example <em>http://192.168.2.188:8081</em> </li>
+</ol>
+<pre><code class="angular2html">   $ python3 web_remote_controller.py
+        remi.server      INFO     Started websocket server 192.168.2.188:43723
+        remi.server      INFO     Started httpserver http://192.168.2.188:8081/
+        remi.request     INFO     built UI (path=/)
+        Autodetecting serial port. Please wait...
+        Port found:  /dev/ttyACM0
+        remi.server.ws   INFO     connection established: ('192.168.2.188', 54508)
+        remi.server.ws   INFO     handshake complete
+</code></pre>
+
+<p>Pressing a GUI button initiates motor movement, and releasing it stops the motors.</p>
+<h2 id="3-the-tkinter-gui-controller">3. THE TKINTER GUI CONTROLLER</h2>
+<p></style>
+<div class="center">
+<img align="middle" src="../images/tkinter_gui.png"></div></p>
+<p>The tkinter GUI runs on a PC, and it connects to a micro:bit via a serial USB link.
+The code running on the micro:bit is the <a href="../controllers/#the-gui_radio_bridge">gui_radio_bridge</a>.
+The bridge translates the serial commands coming from the GUI to micro:bit radio messages.</p>
+<h4 id="tk_controller-code">tk_controller Code</h4>
+<p>The code is structured similarly to the remi gui. Since tkinter programming is beyond the
+scope of this guide, this discussion will be limited to one of general functionality. If you wish to
+learn more about creating tkinter applications, I can recommend
+<a href="https://smile.amazon.com/Modern-Tkinter-Busy-Python-Developers-ebook/dp/B0071QDNLO/ref=sr_1_5?s=books&amp;ie=UTF8&amp;qid=1517529422&amp;sr=1-5&amp;keywords=tkinter">"Modern Tkinter for Busy Python Developers", by Mark Roseman</a>
+ as a reference.</p>
+<p>You may refer to the actual source code by looking at <a href="https://github.com/MrYsLab/microbit-robot/blob/master/remote_controllers/gui_controllers/tkinter/tk_controller.py">tk_controller.py</a>.</p>
+<p>The <strong>__init__</strong> method:</p>
+<ul>
+<li>Auto-detects the micro:bit serial port</li>
+<li>Initializes the tkinter framework</li>
+<li>
+<p>Calls the <strong>create_control_frame</strong> method.</p>
+<ul>
+<li>Create_control_frame instantiates and performs layout for all the GUI widgets</li>
+<li>Associates event handlers for each widget. </li>
+</ul>
+</li>
+</ul>
+<p>Event handlers are provided for each GUI event identified in <em>create_control_frame</em>. </p>
+<h3 id="running-the-tkinter-based-gui">Running The tkinter Based GUI</h3>
+<ol>
+<li>Flash the <em>gui_radio_bridge</em> on to the micro:bit acting as the remote.</li>
+<li>Connect the micro:bit to the computer that will run the GUI using a USB cable.</li>
+<li>Run <a href="https://github.com/MrYsLab/microbit-robot/blob/master/remote_controllers/gui_controllers/tkinter/tk_controller.py">tk_controller.py</a> from a command or terminal window.</li>
+</ol>
+<pre><code class="angular2html">      python3 tk_controller.py
+</code></pre>
+
+<p>Pressing a button initiates robot motion and when a button is released robot motion is stopped.</p>
+<h2 id="4-the-gamerbit-controller">4. THE GAMER:BIT CONTROLLER</h2>
+<p></style>
+<div class="center">
+<img align="middle" src="../images/gamer_bit.jpg"></div></p>
+<p>This controller requires the purchase of a <a href="https://www.sparkfun.com/products/14215">SparkFun gamer:bit</a></p>
+<p>The buttons on the left hand side of the gamer:bit are used to control forward, reverse, left and right motion.
+The buttons on the right control both left and right spinning motion.</p>
+<p>Pressing a button initiates robot motion and when a button is released robot motion is stopped.</p>
+<h3 id="gamerbit-code">Gamerbit Code</h3>
+<p>The code for this controller utilizes the <a href="https://github.com/MrYsLab/gamerbit">gamerbit</a>
+<a href="../robot/#using-3rd-party-libraries-with-microbit-micropython">third party library</a>.</p>
+<p>If you look at <a href="https://github.com/MrYsLab/microbit-robot/blob/master/remote_controllers/gamerbit/gb_remote_control.py">gb_remote_control.py</a>, the gamerbit library, that is, the GamerBit class, 
+is placed at the top of the file.</p>
+<pre><code class="angular2html">class GamerBit:
+    def __init__(self, callback, scans=1):
+        self.pins = [pin0, pin1, pin2, pin8, pin12, pin16, button_a, button_b]
+        self.callback = callback
+        self.number_of_scans = scans
+        for pin in self.pins[:-2]:
+            pin.set_pull(pin.PULL_UP)
+        self.previous_readings = [0] * 8
+        self.current_readings = [0] * 8
+        self._scanner()
+
+    def scan(self):
+        readings = [int(not pin.read_digital()) for pin in self.pins[:-2]]
+        readings.append(int(button_a.is_pressed()))
+        readings.append(int(button_b.is_pressed()))
+        self.current_readings = [int(self.current_readings[pin] or readings[pin]) for pin in range(0, len(readings))]
+
+    def _scanner(self):
+        pin_ids = ['pin0', 'pin1', 'pin2', 'pin8', 'pin12', 'pin16', 'button_a', 'button_b']
+        while True:
+            for scans in range(0, self.number_of_scans):
+                self.scan()
+            report = {}
+            for x in range(0, 8):
+                if self.current_readings[x] != self.previous_readings[x]:
+                    report[pin_ids[x]] = self.current_readings[x]
+            self.previous_readings = self.current_readings
+            self.current_readings = [0] * 8
+            if report:
+                if self.callback:
+                    self.callback(report)
+
+
+def gb_callback(report):
+    &quot;&quot;&quot;
+    This function is called by the GamerBit class when a button
+    state change is detected. It translates the button presses
+    and releases into messages that are sent over the radio
+    interface and received by microbit_robot.py
+    :param report: A GamerBit report dictionary
+    :return:
+    &quot;&quot;&quot;
+    # turn on the radio
+    radio.on()
+    for key in report:
+        value = report[key]
+        # if the button was released, send a stop command
+        if value == 0:
+            radio.send('stop')
+            radio.send('stop')
+            sleep(10)
+            radio.send('stop')
+
+        # send a command associated with each button
+        else:
+            if key == 'pin0':
+                radio.send('fwd')
+                print('fwd')
+            elif key == 'pin8':
+                radio.send('rev')
+                print('rev')
+            elif key == 'pin1':
+                radio.send('left')
+                print('left')
+            elif key == 'pin2':
+                radio.send('right')
+                print('right')
+            elif key == 'pin12':
+                radio.send('spin_left')
+                print('spin_left')
+            elif key == 'pin16':
+                radio.send('spin_right')
+                print('spin_right')
+            else:
+                pass
+    radio.off()
+
+
+# instantiate the GamerBit class providing the callback function
+gb = GamerBit(gb_callback)
+</code></pre>
+
+<p>As shown on the <a href="https://github.com/MrYsLab/gamerbit">gamerbit</a> GitHub page, the library uses a callback
+method provided by the user, to process any button presses on the board. The function, gb_callback() handles
+all the button presses for this application. It translates the gamer:bit events to motor control strings
+and sends those strings over the micro:bit radio interface to the robot. The radio is turned on only to transmit the short
+command strings and then immediately turned off to preserve the battery life. </p>
+<h3 id="running-the-gamerbit-controller">Running The Gamerbit Controller</h3>
+<ol>
+<li>Using your favorite mirco:bit editor, flash <em>gb_remote_control.py</em> on to a micro:bit.</li>
+<li>Plug the micro:bit in the gamer:bit.</li>
+<li>Power the micro:bit either with a USB cable or attaching a batter pack.</li>
+</ol>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../contact/" class="btn btn-neutral float-right" title="Contact Information">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../robot/" class="btn btn-neutral" title="The Robot"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../robot/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../contact/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/require.js"></script>
+      <script src="../search/search.js"></script>
+
+</body>
+</html>
