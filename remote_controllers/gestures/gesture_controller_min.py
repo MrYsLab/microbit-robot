@@ -1,18 +1,3 @@
-"""
-    gesture_controller.py
-    This file implements the code needed use a microbit and its gestures
-    to control the movement of the microbit_robot over the radio interface.
-    It uses the display to indicate the current current direction.
-    An "X" means stopped
-    Point the USB connector towards the floor = Forward
-    Point the USB connector towards the ceiling = Reverse
-    Point Button A towards the ceiling = Turn Right
-    Pint Button A towards the floor = Turn Left
-    Push Button A = Spin left
-    Push Button B = Spin Right
-    License: The MIT License (MIT)
-    Copyright (c) 2018 Alan Yorinks
-"""
 from microbit import*
 import radio
 last_gesture=''

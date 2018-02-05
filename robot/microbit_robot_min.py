@@ -1,14 +1,3 @@
-"""
-    microbit_robot.py
-    This file implements the code needed to run the motors on a simple
-    2 wheel robot and perform collision avoidance.
-    It utilizes the KMotor library to control the motors.
-    It provides collision avoidance using
-    a Sharp GP2Y0D810Z0F Digital Distance sensor.
-    The Robot class listens for commands over the radio interface.
-    License: The MIT License (MIT)
-    Copyright (c) 2018 Alan Yorinks
-"""
 from microbit import pin0,pin8,pin12,pin15,pin16,Image,sleep
 class KMotor:
  FORWARD=0
