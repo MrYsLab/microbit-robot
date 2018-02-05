@@ -206,7 +206,8 @@ changing the micro:bit's orientation: </p>
 <p>Hold the micro:bit parallel to the floor and ceiling, and the robot stops.</p>
 </li>
 </ul>
-<p>To use the gesture controller, flash <a href="https://github.com/MrYsLab/microbit-robot/blob/master/remote_controllers/gestures/gesture_controller_min.py">gesture_controller_min.py</a> onto the micro:bit, and you are ready to go.</p>
+<p>To use the gesture controller, flash <a href="https://github.com/MrYsLab/microbit-robot/blob/master/remote_controllers/gestures/gesture_controller_min.py">gesture_controller_min.py</a>
+ onto the controller micro:bit, and you are ready to go.</p>
 <h3 id="gesture-controller-code">Gesture Controller Code</h3>
 <pre><code class="angular2html">from microbit import *
 import radio
@@ -280,7 +281,7 @@ In addition an arrow image is displayed to show the motion
 command detected, or an "X" is displayed if the robot is stopped.</p>
 <h2 id="gui-based-controllers">GUI BASED CONTROLLERS</h2>
 <p>The GUI based controllers each consist of 2 components. The first component is a Python script
-that runs on a PC and connects to the micro:bit via the serial/USB cable. There are separate Python scripts 
+that runs on a PC and connects to the controller micro:bit via the serial/USB cable. There are separate Python scripts 
 for each of the GUI controllers, that is
 the Web based GUI and tkinter based GUI. These scripts
 detect GUI button press events, and when an event change is detected, it sends a serial
@@ -292,7 +293,7 @@ and transmits those to the robot.</p>
 <h3 id="the-gui_radio_bridge">The gui_radio_bridge</h3>
 <p>As described above, the gui_radio_bridge translates serial messages generated
  by the GUI scripts into radio messages.</p>
-<p>It needs to be flashed onto the micro:bit before either of the PC GUI scripts can run.</p>
+<p>It needs to be flashed onto the controller micro:bit before either of the PC GUI scripts can run.</p>
 <p>To flash the gui_radio_bridge, just copy the code from <a href="https://github.com/MrYsLab/microbit-robot/blob/master/remote_controllers/gui_controllers/gui_radio_bridge_min.py">gui_radio_bridge_min.py</a>
 to your favorite micro:bit editor and flash it. </p>
 <h4 id="the-gui_radio_bridge-code">The gui_radio_bridge Code.</h4>
@@ -335,7 +336,7 @@ The editor not only allows you to layout the web page, but it generates the code
 including stubs for any desired GUI events, such as button clicks. If you prefer to code directly in Python
 without the aid of the editor, the remi API is succinct and easy to understand.</p>
 <p>The GUI and its associated web server are run on a PC, and it connects to a micro:bit via a serial USB link.
-The code running on the micro:bit is the <a href="../controllers/#the-gui_radio_bridge">gui_radio_bridge</a>.
+The code running on the controller micro:bit is the <a href="../controllers/#the-gui_radio_bridge">gui_radio_bridge</a>.
 The bridge translates the serial commands coming from the GUI to micro:bit radio messages.</p>
 <p>Before running this GUI, you will need to install remi on your PC, so please follow the 
 installation instructions on the <a href="https://github.com/dddomodossola/remi">remi GitHub home page</a>.</p>
