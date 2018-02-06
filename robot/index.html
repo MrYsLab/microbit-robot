@@ -80,7 +80,7 @@
     <li class="toctree-l2"><a href="#using-3rd-party-libraries-with-microbit-micropython">Using 3rd Party Libraries With micro:bit MicroPython</a></li>
     
 
-    <li class="toctree-l2"><a href="#the-kitronic_motor_board-library">The kitronic_motor_board Library</a></li>
+    <li class="toctree-l2"><a href="#the-kitronik_motor_board-library">The kitronik_motor_board Library</a></li>
     
 
     <li class="toctree-l2"><a href="#the-microbit_robot-source-code">The microbit_robot Source Code</a></li>
@@ -210,7 +210,7 @@ robot.</p>
 <p></style>
 <div class="center">
 <img align="middle" src="../images//motor_pins.JPG"></div>
-2. Measure a breakaway header and solder it to the breakout pins of the Kitronic motor board.
+2. Measure a breakaway header and solder it to the breakout pins of the Kitronik motor board.
 Place the short pins into the breakout pads from the top of the board, exposing the longer pins.</p>
 <p></style>
 <div class="center">
@@ -224,7 +224,7 @@ to the module.</p>
 <p></style>
 <div class="center">
 <img align="middle" src="../images/wiring.JPG"></div>
-5. Wire the motors and battery to the motor board. Kitronic instructions may be found <a href="https://www.kitronik.co.uk/pdf/5620%20Motor%20Driver%20Board%20V1.1-2.pdf">here</a>.</p>
+5. Wire the motors and battery to the motor board. Kitronik instructions may be found <a href="https://www.kitronik.co.uk/pdf/5620%20Motor%20Driver%20Board%20V1.1-2.pdf">here</a>.</p>
 <p></style>
 <div class="center">
 <img align="middle" src="../images/front.JPG"></div>
@@ -304,12 +304,12 @@ an <em>import</em> statement to our source file to include the library in our pr
 the <a href="https://microbit-playground.co.uk/howto/add-python-module-microbit-micropython">procedure</a>
 to do so is somewhat cumbersome. A simpler and more straight forward approach is to simply copy the library source code 
 to the top of your application source file and then add your code below it.</p>
-<p>For the robot, we are going to take advantage of the <a href="https://github.com/MrYsLab/kitronic_motor_board">kitronic_motor_board library</a>
+<p>For the robot, we are going to take advantage of the <a href="https://github.com/MrYsLab/kitronik_motor_board">kitronik_motor_board library</a>
 to provide motor control.</p>
 <p>If you look at <a href="https://github.com/MrYsLab/microbit-robot/blob/master/robot/microbit_robot.py">microbit_robot.py</a>, you will see the KMotor class at the top of the file. This class is the source for the 
-kitronic_motor_board library that was copied and pasted into our file.</p>
-<h2 id="the-kitronic_motor_board-library">The kitronic_motor_board Library</h2>
-<p>You can read the full API documentation for the <a href="https://github.com/MrYsLab/kitronic_motor_board">kitronic_motor_board library</a> on
+kitronik_motor_board library that was copied and pasted into our file.</p>
+<h2 id="the-kitronik_motor_board-library">The kitronik_motor_board Library</h2>
+<p>You can read the full API documentation for the <a href="https://github.com/MrYsLab/kitronik_motor_board">kitronik_motor_board library</a> on
 the GitHub web page, but in a nutshell, it provides a simple API for motor control that allows one to select a motor 
 and turn it on in either the forward or reverse direction, or place it in a hard brake or coast state.</p>
 <h2 id="the-microbit_robot-source-code">The microbit_robot Source Code</h2>
